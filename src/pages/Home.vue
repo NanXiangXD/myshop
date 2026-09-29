@@ -1,25 +1,22 @@
 <template>
-  <van-search
-    v-model="searchValue"
-    shape="round"
-    show-cancel
-    placeholder="请输入搜索关键词"
-    @search="onSearch"
-    @cancel="onCancel"
-  />
+    <van-search v-model="keyword" placeholder="2026240401064-陶若溪" shape="round" @search="onSearch" @cancel="onCancel" show-action />
+    <HomeSwiper />
 </template>
 
 <script setup>
+import { showToast } from 'vant';
 import { ref } from 'vue'
-import { showToast } from 'vant'
+import HomeSwiper from '../components/HomeSwiper.vue'
 
-const searchValue = ref('')
+const keyword = ref('')
+// console.log(keyword.value)
 
-const onSearch = () => {
-  showToast(`搜索：${searchValue.value}`)
+const onSearch = (value) => {
+  // console.log('搜索:', value)
+  showToast("搜索内容："+value)
 }
 
-const onCancel = () => {
-  showToast('已取消搜索')
+const onCancel = ()=>{
+  showToast("取消")
 }
 </script>
