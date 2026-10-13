@@ -1,6 +1,6 @@
 <template>
     <van-grid :column-num="2" square :gutter="2" :border="false">
-        <van-grid-item v-for="item in brandList" :key="item.id" class="home-product__item">
+        <van-grid-item v-for="item in brandList" :key="item.id" class="home-product__item" @click="goDetails(item)">
             <img class="home-product__img" :src="item.pic_url" :alt="item.name">
             <div class="home-product__label">{{ item.name }}</div>
         </van-grid-item>
@@ -9,6 +9,17 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const goDetails = (item) => {
+    router.push({
+        name: 'productDetails',
+        params: { id: item.id },
+        query: { name: item.name, pic_url: item.pic_url },
+    })
+}
 
 const brandList = ref([
     { id: 1, name: '直播', pic_url: '/images/product1.png' },

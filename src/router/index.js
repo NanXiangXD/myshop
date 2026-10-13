@@ -58,6 +58,16 @@ const router = createRouter({
         isShowBack: false,
       },
     },
+    {
+      path: '/product/:id',
+      name: 'productDetails',
+      component: () => import('../components/HomeProDetails.vue'),
+      meta: {
+        title: '商品详情',
+        isShowNav: false,
+        isShowBack: true,
+      },
+    },
   ],
 })
 
