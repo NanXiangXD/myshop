@@ -1,12 +1,14 @@
 <template>
-    <van-search v-model="keyword" placeholder="2026240401064-陶若溪" shape="round" @search="onSearch" @cancel="onCancel" show-action />
+    <van-search v-model="keyword" placeholder="2026240401083-张珈铭" shape="round" @search="onSearch" @cancel="onCancel" show-action />
     <HomeSwiper />
+    <HomeGrid />
 </template>
 
 <script setup>
 import { showToast } from 'vant';
 import { ref } from 'vue'
-import HomeSwiper from '../components/HomeSwiper.vue'
+import HomeSwiper from '../components/HomeSwiper.vue';
+import HomeGrid from '../components/HomeGrid.vue';
 
 const keyword = ref('')
 // console.log(keyword.value)
