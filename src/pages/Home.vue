@@ -3,6 +3,8 @@
     <HomeSwiper />
     <HomeGrid @click="toggleProduct" />
     <HomeProduct v-if="showProduct" />
+    <HomeNew />
+    <HomeTop />
 </template>
 
 <script setup>
@@ -11,6 +13,8 @@ import { ref } from 'vue'
 import HomeSwiper from '../components/HomeSwiper.vue';
 import HomeGrid from '../components/HomeGrid.vue';
 import HomeProduct from '../components/HomeProduct.vue';
+import HomeNew from '../components/HomeNew.vue';
+import HomeTop from '../components/HomeTop.vue';
 
 const keyword = ref('')
 const showProduct = ref(false)
